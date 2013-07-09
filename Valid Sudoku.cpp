@@ -1,4 +1,3 @@
-
 class Solution {
 public:
     const int dim = 3;
@@ -65,11 +64,11 @@ public:
         if(!isColValid(board,m,n))
             return false;
         
-        for(int i = 0; i < m/3; i++)
-            for(int j = 0; j < n/3; j++)
+        for(int i = 0; i < m/dim; i++)
+            for(int j = 0; j < n/dim; j++)
             {
-                int startX = i*3;
-                int startY = j*3;
+                int startX = i*dim;
+                int startY = j*dim;
                 if(!isGridValid(board,startX,startY))
                     return false;
             }
