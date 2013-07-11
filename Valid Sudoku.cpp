@@ -12,7 +12,7 @@ public:
                 else hash.insert(row[i]);
             }
         return true;
-    }
+    } 
     bool isColValid(vector<vector<char> >& board, int m, int n)
     {
         
