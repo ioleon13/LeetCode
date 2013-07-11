@@ -1,4 +1,3 @@
-
 class Solution {
 public:
     const int dim = 3;
