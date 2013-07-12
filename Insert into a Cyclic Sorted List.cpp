@@ -1,23 +1,23 @@
 #define NULL 0
-class CNode{
+class ListNode{
 public:
-	CNode(int v = 0) : val(v), next(NULL) {}
+	ListNode(int v = 0) : val(v), next(NULL) {}
 	int val;
-	CNode* next;
+	ListNode* next;
 
 };
 
-CNode* insert(CNode* head, const int& item)
+ListNode* insert(ListNode* head, const int& item)
 {
 	if(head == NULL)
 	{
-		CNode* newNode = new CNode(item);
+		ListNode* newNode = new ListNode(item);
 		newNode->next = newNode;
 		head = newNode;
 		return head;
 	}
-	CNode* prev = head;
-	CNode* current = head->next;
+	ListNode* prev = head;
+	ListNode* current = head->next;
 	while(current != head->next)
 	{
 		if(item >= prev->val && item <= current->val)
@@ -28,7 +28,7 @@ CNode* insert(CNode* head, const int& item)
 		current = current->next;
 
 	}
-	CNode* newNode = new CNode(item);
+	ListNode* newNode = new ListNode(item);
 	newNode->next = current;
 	prev->next = newNode;
 	return head;
