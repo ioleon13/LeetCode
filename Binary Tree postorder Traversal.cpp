@@ -39,3 +39,40 @@ public:
         return ret;
     }
 };
+
+
+class Solution {
+public:
+	vector<int> postorderTraversalBetter(TreeNode *root) {
+		vector<int> ret;
+		if(root == NULL)
+			return ret;
+		stack<TreeNode*> sta;
+		sta.push(root);
+		TreeNode* prev = NULL;
+		while(!sta.empty())
+		{
+			TreeNode* current = sta.top();
+			if(prev == NULL || current == prev->left || current == prev->right )
+			{
+				if(current->left != NULL)
+					sta.push(current->left);
+				else if(current->right != NULL)
+					sta.push(current->right);
+			}
+			else if(current->left == prev)
+			{
+				if(current->right != NULL)
+					sta.push(current->right);
+			}
+			else
+			{
+				sta.pop();
+				ret.push_back(current->val);
+			}
+			prev = current;
+
+		}
+		return ret;
+	}
+};
