@@ -1,4 +1,3 @@
-
 #include <iostream>
 using namespace std;
 
@@ -14,7 +13,7 @@ bool isIn(TreeNode* current, TreeNode* target)
 {
 	if(current == NULL)
 		return false;
-	if(current->val == target->val)
+	if(current == target)
 		return true;
 	return isIn(current->left,target) || isIn(current->right,target);
 }
