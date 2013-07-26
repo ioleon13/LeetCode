@@ -12,8 +12,8 @@ public:
         vector<int> vec(3);
         for(int k = 0; k < n; k++)
         {
-            while(k >= 1 && num[k-1] == num[k])
-                k++;
+            if(k >= 1 && num[k-1] == num[k])
+                continue;
             int i = k+1; 
             int j = n-1;
             while(i < j)
