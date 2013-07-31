@@ -8,14 +8,14 @@ public:
         if(strs.empty())
             return ret;
         int n = strs.size();
-        int maxLen = 0;
+        int minLen = INT_MAX;
         for(int i = 0; i < n; i++)
         {
             int len = strs[i].size();
-            if(len > maxLen)
-                maxLen = len;
+            if(len < minLen)
+                minLen = len;
         }
-        for(int i = 0; i < maxLen; i++)
+        for(int i = 0; i < minLen; i++)
         {
             char tem = strs[0][i];
             for(int j = 1; j < n; j++)
